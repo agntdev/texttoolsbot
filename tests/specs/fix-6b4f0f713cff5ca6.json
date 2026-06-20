@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Help callback button shows available commands",
+    "steps": [
+      {
+        "send": { "callback": "help" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Available commands:\n/start — Get started\n/help — Show this help" } }
+        ]
+      }
+    ]
+  }
+]
