@@ -1,0 +1,24 @@
+[
+  {
+    "name": "/lower with text returns lowercase string",
+    "steps": [
+      {
+        "send": { "text": "/lower HELLO World" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "hello world" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/lower with no arguments shows usage",
+    "steps": [
+      {
+        "send": { "text": "/lower" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Usage: /lower <text>" } }
+        ]
+      }
+    ]
+  }
+]
