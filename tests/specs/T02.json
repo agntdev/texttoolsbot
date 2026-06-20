@@ -1,6 +1,6 @@
 [
   {
-    "name": "/start replies with welcome and main menu",
+    "name": "/start sends welcome with main menu",
     "steps": [
       {
         "send": { "text": "/start" },
