@@ -1,0 +1,24 @@
+[
+  {
+    "name": "/count with text reports word and character counts",
+    "steps": [
+      {
+        "send": { "text": "/count hello world" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Words: 2, Characters: 11" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/count with no arguments shows usage",
+    "steps": [
+      {
+        "send": { "text": "/count" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Usage: /count <text>" } }
+        ]
+      }
+    ]
+  }
+]
