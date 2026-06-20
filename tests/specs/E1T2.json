@@ -1,0 +1,24 @@
+[
+  {
+    "name": "/upper with text returns uppercase string",
+    "steps": [
+      {
+        "send": { "text": "/upper hello" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "HELLO" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/upper with no arguments shows usage",
+    "steps": [
+      {
+        "send": { "text": "/upper" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Usage: /upper <text>" } }
+        ]
+      }
+    ]
+  }
+]
