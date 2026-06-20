@@ -10,7 +10,7 @@ Telegram users who want quick, single-message text transforms or counts via bot 
 - Handler module: per-command TypeScript module under src/handlers that processes the command and replies
 
 ## Integrations & notification targets
-- Telegram Bot API via grammY. Bot token provided via environment variable (TELEGRAM_BOT_TOKEN).
+- Telegram Bot API via grammY. Bot token provided via environment variable (BOT_TOKEN).
 - No external APIs, databases, or notification endpoints.
 
 ## Interaction flows
@@ -67,7 +67,7 @@ Notes on input handling
   - src/handlers/count.ts
   - src/utils.ts — shared small helpers (e.g., wordCount function)
 - Handler module contract: each handler exports a default async function handle(ctx: Context): Promise<void> (or default export that is the handler function). index.ts imports and registers them with bot.command('reverse', reverseHandler).
-- Environment: BOT token read from process.env.TELEGRAM_BOT_TOKEN. Use dotenv for local development (optional).
+- Environment: BOT token read from process.env.BOT_TOKEN. Use dotenv for local development (optional).
 - Commands: register via bot.api.setMyCommands with descriptions for each command.
 - Logging: minimal console logging for start and unhandled errors.
 - Errors: handler should catch and reply with a short generic error message (e.g., "Sorry, an error occurred.") but no stack traces to users.
@@ -85,7 +85,7 @@ Notes on input handling
 - No multi-language support beyond English.
 
 ## Assumptions & defaults
-- BOT token environment variable: TELEGRAM_BOT_TOKEN — standard and secure way to supply token.
+- BOT token environment variable: BOT_TOKEN — standard and secure way to supply token.
   Rationale: simplest env-based configuration for deployment.
 - Handlers export default async function handle(ctx: Context): Promise<void> and are imported by src/index.ts.
   Rationale: consistent handler shape and easy wiring to grammY command registration.
