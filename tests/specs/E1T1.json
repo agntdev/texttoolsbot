@@ -1,0 +1,24 @@
+[
+  {
+    "name": "/reverse with text returns reversed string",
+    "steps": [
+      {
+        "send": { "text": "/reverse hello" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "olleh" } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/reverse with no arguments shows usage",
+    "steps": [
+      {
+        "send": { "text": "/reverse" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Usage: /reverse <text>" } }
+        ]
+      }
+    ]
+  }
+]
