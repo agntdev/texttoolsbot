@@ -44,6 +44,19 @@ export async function buildBot(token: string) {
     bot.use(mod.default);
   }
 
+  try {
+    await bot.api.setMyCommands([
+      { command: "start", description: "Get started" },
+      { command: "help", description: "Show this help" },
+      { command: "reverse", description: "Reverse text" },
+      { command: "upper", description: "Convert to uppercase" },
+      { command: "lower", description: "Convert to lowercase" },
+      { command: "count", description: "Count words and characters" },
+    ]);
+  } catch {
+    /* setMyCommands is best-effort; bot must still start */
+  }
+
   bot.on("message", (ctx) => ctx.reply("Sorry, I didn't understand that. Try /help."));
 
   return bot;
